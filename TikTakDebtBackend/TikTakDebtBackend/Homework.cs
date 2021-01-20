@@ -38,7 +38,6 @@ namespace TikTakDebtBackend
         public static Homework CreateNewHomework()
         {
             var isRunning = true;
-            var userInput = "";
             var newHomeworkName = "";
             var newHomeworkInitialDay = "";
             var newHomeWorkFinalDay = "";
