@@ -58,18 +58,18 @@ namespace TikTakDebtBackend
                     case "1":
                         var newHomework = Homework.CreateNewHomework();
                         homeworkList.Add(newHomework);
-                        newHomework.ID = homeworkList.Count;
+                        newHomework.Id = homeworkList.Count;
                         break;
 
                     case "2":
                         foreach (var homework in homeworkList)
                         {
+                            var finishedHomework = new FinishedHomework(homework.Id, homework.Name, homework.InitialDay, homework.FinalDay,
+                                homework.DaysExtended, homework.DaysLate, homework.GithubLink, homework.ReviewLink);
                             var i = 1;
-                            Console.WriteLine(i + " - " + homework.Name + " from " + homework.InitialDay + " to " +
-                                              homework.FinalDay);
+                            Console.WriteLine(i + " - " + finishedHomework.Name + " from " + finishedHomework.InitialDay + " to " + finishedHomework.FinalDay + " finished on " + finishedHomework.DateFinished);
                             i++;
                         }
-
                         break;
 
                     case "3":

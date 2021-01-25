@@ -5,11 +5,11 @@ using System.Text;
 
 namespace TikTakDebtBackend
 {
-    class Homework
+    public class Homework
     {
         public Homework(int id, string name, DateTime initialDay, DateTime finalDay, int daysExtended, int daysLate, string githubLink, string reviewLink)
         {
-            ID = id;
+            Id = id;
             Name = name;
             InitialDay = initialDay;
             FinalDay = finalDay;
@@ -19,7 +19,7 @@ namespace TikTakDebtBackend
             ReviewLink = reviewLink;
         }
 
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         public string Name { get; set; }
 
