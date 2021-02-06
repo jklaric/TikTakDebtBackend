@@ -128,7 +128,7 @@ namespace TikTakDebtBackend
             }
 
             var userInput = Console.ReadLine();
-            while (!int.TryParse(userInput, out _) || !(int.Parse(userInput) > 0 && int.Parse(userInput) < homeworkList.Count))
+            while (!int.TryParse(userInput, out _) || int.Parse(userInput) <= 0 || int.Parse(userInput) > homeworkList.Count)
             {
                 Console.WriteLine("Please enter a valid number.");
                 userInput = Console.ReadLine();
@@ -245,15 +245,19 @@ namespace TikTakDebtBackend
             foreach (var homework in homeworkList)
             {
                 var i = 1;
-                Console.WriteLine(i + " - " + homework.Name + " from " + homework.InitialDay + " to " +
-                                  homework.FinalDay);
+                Console.WriteLine(i + " - " + homework.Name + " from " + homework.InitialDay + " to " + homework.FinalDay);
                 i++;
+            }
+
+            var userInput = Console.ReadLine();
+            while (!int.TryParse(userInput, out _) || int.Parse(userInput) <= 0 || int.Parse(userInput) > homeworkList.Count)
+            {
+                Console.WriteLine("Please enter a valid number.");
+                userInput = Console.ReadLine();
             }
 
             for (int i = 0; i < homeworkList.Count; i++)
             {
-                var userInput = Console.ReadLine();
-
                 if (int.Parse(userInput) == i + 1)
                 {
                     homeworkList.Remove(homeworkList[i]);
